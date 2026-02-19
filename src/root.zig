@@ -57,6 +57,9 @@ pub const MimeBuilder = mime.MimeBuilder;
 
 pub const serializer = @import("serializer.zig");
 
+// Template engine (re-exported from zzz_template)
+pub const template = @import("zzz_template");
+
 pub const version = "0.1.0";
 
 test {

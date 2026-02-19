@@ -20,12 +20,17 @@ pub fn build(b: *std.Build) void {
     mailer_options.addOption(bool, "mailgun_enabled", mailgun_enabled);
     mailer_options.addOption(bool, "async_enabled", async_enabled);
 
+    const zzz_template_dep = b.dependency("zzz_template", .{
+        .target = target,
+    });
+
     const mod = b.addModule("zzz_mailer", .{
         .root_source_file = b.path("src/root.zig"),
         .target = target,
     });
 
     mod.addImport("mailer_options", mailer_options.createModule());
+    mod.addImport("zzz_template", zzz_template_dep.module("zzz_template"));
 
     if (needs_tls) {
         mod.linkSystemLibrary("ssl", .{});

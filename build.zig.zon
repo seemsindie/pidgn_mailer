@@ -7,6 +7,9 @@
         .zzz = .{
             .path = "../zzz",
         },
+        .zzz_template = .{
+            .path = "../zzz_template",
+        },
     },
     .paths = .{
         "build.zig",
