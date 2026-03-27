@@ -25,10 +25,10 @@ pub const DevMailbox = struct {
                 i -= 1;
                 const email = self.adapter.getEmail(i) orelse continue;
                 const row = std.fmt.bufPrint(buf[pos..],
-                    \\<tr onclick="window.location='/__zzz/mailbox/{d}'" style="cursor:pointer">
+                    \\<tr onclick="window.location='/__pidgn/mailbox/{d}'" style="cursor:pointer">
                     \\<td>{s}</td>
                     \\<td>{s}</td>
-                    \\<td><a href="/__zzz/mailbox/{d}">{s}</a></td>
+                    \\<td><a href="/__pidgn/mailbox/{d}">{s}</a></td>
                     \\<td>{d}</td>
                     \\</tr>
                     \\
@@ -98,7 +98,7 @@ pub const DevMailbox = struct {
         if (email.html_body_len > 0) {
             const iframe = std.fmt.bufPrint(buf[pos..],
                 \\<h3>HTML Body</h3>
-                \\<iframe src="/__zzz/mailbox/{d}/html" sandbox="" style="width:100%;height:400px;border:1px solid #ddd;border-radius:4px"></iframe>
+                \\<iframe src="/__pidgn/mailbox/{d}/html" sandbox="" style="width:100%;height:400px;border:1px solid #ddd;border-radius:4px"></iframe>
                 \\
             , .{index}) catch return null;
             pos += iframe.len;
@@ -125,7 +125,7 @@ pub const DevMailbox = struct {
         \\<!DOCTYPE html>
         \\<html><head>
         \\<meta charset="utf-8">
-        \\<title>zzz Mailbox</title>
+        \\<title>pidgn Mailbox</title>
         \\<meta http-equiv="refresh" content="5">
         \\<style>
         \\  * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -145,7 +145,7 @@ pub const DevMailbox = struct {
         \\</style>
         \\</head><body>
         \\<div class="container">
-        \\<h1>zzz Dev Mailbox</h1>
+        \\<h1>pidgn Dev Mailbox</h1>
         \\<p class="subtitle">Emails sent in development (auto-refreshes every 5s)</p>
         \\<table>
         \\<tr><th>From</th><th>To</th><th>Subject</th><th>Timestamp</th></tr>
@@ -155,7 +155,7 @@ pub const DevMailbox = struct {
     const inbox_footer =
         \\</table>
         \\<div class="actions">
-        \\<form method="POST" action="/__zzz/mailbox/clear" style="display:inline">
+        \\<form method="POST" action="/__pidgn/mailbox/clear" style="display:inline">
         \\<button type="submit" class="btn">Clear All</button>
         \\</form>
         \\</div>
@@ -168,7 +168,7 @@ pub const DevMailbox = struct {
         \\<!DOCTYPE html>
         \\<html><head>
         \\<meta charset="utf-8">
-        \\<title>zzz Mailbox - Email Detail</title>
+        \\<title>pidgn Mailbox - Email Detail</title>
         \\<style>
         \\  * { box-sizing: border-box; margin: 0; padding: 0; }
         \\  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f5f5; color: #333; padding: 20px; }
@@ -183,7 +183,7 @@ pub const DevMailbox = struct {
         \\</style>
         \\</head><body>
         \\<div class="container">
-        \\<a href="/__zzz/mailbox" class="back">&larr; Back to Inbox</a>
+        \\<a href="/__pidgn/mailbox" class="back">&larr; Back to Inbox</a>
         \\<h1>Email Detail</h1>
         \\<div class="card">
         \\
@@ -207,7 +207,7 @@ test "DevMailbox renders empty inbox" {
 
     var buf: [16384]u8 = undefined;
     const html = mailbox.renderInbox(&buf).?;
-    try std.testing.expect(std.mem.indexOf(u8, html, "zzz Dev Mailbox") != null);
+    try std.testing.expect(std.mem.indexOf(u8, html, "pidgn Dev Mailbox") != null);
     try std.testing.expect(std.mem.indexOf(u8, html, "No emails yet") != null);
 }
 

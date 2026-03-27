@@ -1,4 +1,4 @@
-//! zzz_mailer - Email Sending for the Zzz Web Framework
+//! pidgn_mailer - Email Sending for the Pidgn Web Framework
 //!
 //! Provides email sending with multiple adapter backends (SMTP, SendGrid, Mailgun,
 //! Dev, Test, Log), rate limiting, telemetry hooks, and a dev mailbox web UI.
@@ -57,8 +57,8 @@ pub const MimeBuilder = mime.MimeBuilder;
 
 pub const serializer = @import("serializer.zig");
 
-// Template engine (re-exported from zzz_template)
-pub const template = @import("zzz_template");
+// Template engine (re-exported from pidgn_template)
+pub const template = @import("pidgn_template");
 
 pub const version = "0.1.0";
 

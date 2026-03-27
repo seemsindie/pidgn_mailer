@@ -1,16 +1,16 @@
 .{
-    .name = .zzz_mailer,
-    .version = "0.2.0-beta.1",
-    .fingerprint = 0x3e3b672ce38be7bc,
+    .name = .pidgn_mailer,
+    .version = "0.3.0-beta.1",
+    .fingerprint = 0x35aecbd0009bfeff,
     .minimum_zig_version = "0.16.0-dev.2905+5d71e3051",
     .dependencies = .{
-        .zzz = .{
-            .url = "git+https://github.com/seemsindie/zzz.zig#12e806c5b3df8f2ff2737bb1ea501478c3385112",
-            .hash = "zzz-0.2.0-beta.1-LYmrMxXCCAA0qwZtsGbE9cRFh1IspkMr9Z4bfvlN7oQ3",
+        .pidgn = .{
+            .url = "git+https://github.com/seemsindie/pidgn#1648ab1e70f967232e500261bc0165d92f6b2116",
+            .hash = "pidgn-0.3.0-beta.1-0tg_sjppCQAYAA1rgZvomTq4NnCDundG8w7k3XdzfYsK",
         },
-        .zzz_template = .{
-            .url = "git+https://github.com/seemsindie/zzz_template#45cec530f5f0f68d9d77ee5966ebea98302b5ea8",
-            .hash = "zzz_template-0.2.0-beta.1-907cK-UAAQAo_RGeGebvARY0_iFlQOabZOfIvhp0CrUU",
+        .pidgn_template = .{
+            .url = "git+https://github.com/seemsindie/pidgn_template#023adccb9fa49e20ca7976432ae4ceb7b6c703ef",
+            .hash = "pidgn_template-0.3.0-beta.1-vkexMPsAAQDhWHP24MH2FpxjcNOcpdZtfxuF5nA7V9UV",
         },
         .openssl = .{
             .url = "git+https://github.com/seemsindie/openssl-zig#37f77ff7c234f262ea809a19659e3754615bdeb6",

@@ -6,7 +6,7 @@ const SendResult = email_mod.SendResult;
 /// Adapter that logs emails to stderr. Always returns success.
 pub const LogAdapter = struct {
     pub const Config = struct {
-        prefix: []const u8 = "[zzz_mailer]",
+        prefix: []const u8 = "[pidgn_mailer]",
     };
 
     prefix: []const u8,

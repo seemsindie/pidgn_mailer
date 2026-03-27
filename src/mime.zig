@@ -7,8 +7,8 @@ const Attachment = email_mod.Attachment;
 /// RFC 2045 MIME message builder.
 /// Generates a complete RFC 5322 message from an Email struct.
 pub const MimeBuilder = struct {
-    const boundary = "zzz_mailer_boundary_7x9k2m";
-    const alt_boundary = "zzz_mailer_alt_boundary_3p8w";
+    const boundary = "pidgn_mailer_boundary_7x9k2m";
+    const alt_boundary = "pidgn_mailer_alt_boundary_3p8w";
 
     /// Build a complete MIME message into the provided buffer.
     /// Returns the slice of the buffer that was written to.

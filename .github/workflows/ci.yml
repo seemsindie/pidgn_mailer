@@ -13,10 +13,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
-    - name: Clone zzz dependency
-      run: git clone --depth 1 https://github.com/seemsindie/zzz.zig.git ../zzz.zig
-    - name: Clone zzz_template dependency
-      run: git clone --depth 1 https://github.com/seemsindie/zzz_template.git ../zzz_template
+    - name: Clone pidgn dependency
+      run: git clone --depth 1 https://github.com/seemsindie/pidgn.git ../pidgn.zig
+    - name: Clone pidgn_template dependency
+      run: git clone --depth 1 https://github.com/seemsindie/pidgn_template.git ../pidgn_template
     - uses: mlugg/setup-zig@v2
       with:
         version: 0.16.0-dev.2905+5d71e3051

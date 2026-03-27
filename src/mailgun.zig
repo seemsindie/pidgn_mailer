@@ -21,7 +21,7 @@ pub const MailgunAdapter = struct {
 
     pub fn send(self: *MailgunAdapter, email: Email, _: std.mem.Allocator) SendResult {
         // Build multipart/form-data body
-        const boundary = "zzz_mailgun_boundary_k8m3x";
+        const boundary = "pidgn_mailgun_boundary_k8m3x";
         var body_buf: [16384]u8 = undefined;
         const body = buildFormData(email, &body_buf, boundary) orelse {
             return .{ .success = false, .error_message = "Failed to build Mailgun form data" };

@@ -1,6 +1,6 @@
-# zzz_mailer
+# pidgn_mailer
 
-Email sending library for the zzz web framework.
+Email sending library for the pidgn web framework.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Zig](https://img.shields.io/badge/Zig-0.16.0-orange.svg)](https://ziglang.org/)
@@ -26,10 +26,10 @@ A pluggable email delivery library built on the adapter pattern. Ships with adap
 ### Sending with SMTP
 
 ```zig
-const zzz_mailer = @import("zzz_mailer");
-const Mailer = zzz_mailer.Mailer;
-const SmtpAdapter = zzz_mailer.SmtpAdapter;
-const Email = zzz_mailer.Email;
+const pidgn_mailer = @import("pidgn_mailer");
+const Mailer = pidgn_mailer.Mailer;
+const SmtpAdapter = pidgn_mailer.SmtpAdapter;
+const Email = pidgn_mailer.Email;
 
 var mailer = Mailer(SmtpAdapter).init(.{
     .adapter = .{
@@ -59,7 +59,7 @@ if (!result.success) {
 ### Sending with SendGrid
 
 ```zig
-var mailer = Mailer(zzz_mailer.SendGridAdapter).init(.{
+var mailer = Mailer(pidgn_mailer.SendGridAdapter).init(.{
     .adapter = .{ .api_key = "SG.your-api-key" },
 });
 defer mailer.deinit();
@@ -70,7 +70,7 @@ _ = mailer.send(email, allocator);
 ### Sending with Mailgun
 
 ```zig
-var mailer = Mailer(zzz_mailer.MailgunAdapter).init(.{
+var mailer = Mailer(pidgn_mailer.MailgunAdapter).init(.{
     .adapter = .{
         .api_key = "key-your-api-key",
         .domain = "mg.example.com",
@@ -86,7 +86,7 @@ _ = mailer.send(email, allocator);
 The dev adapter stores emails in memory so you can inspect them through a web UI during local development.
 
 ```zig
-var mailer = Mailer(zzz_mailer.DevAdapter).init(.{});
+var mailer = Mailer(pidgn_mailer.DevAdapter).init(.{});
 defer mailer.deinit();
 
 _ = mailer.send(email, allocator);
@@ -101,7 +101,7 @@ std.debug.print("Subject: {s}\n", .{stored.getSubject()});
 
 ```zig
 test "sends welcome email" {
-    var mailer = Mailer(zzz_mailer.TestAdapter).init(.{});
+    var mailer = Mailer(pidgn_mailer.TestAdapter).init(.{});
     defer mailer.deinit();
 
     _ = mailer.send(email, std.testing.allocator);
@@ -124,7 +124,7 @@ var mailer = Mailer(SmtpAdapter).init(.{
 ### Telemetry
 
 ```zig
-var telemetry = zzz_mailer.Telemetry{};
+var telemetry = pidgn_mailer.Telemetry{};
 telemetry.attach(&myHandler);
 
 var mailer = Mailer(SmtpAdapter).init(.{ .adapter = .{} });
@@ -151,18 +151,18 @@ zig build test   # Run tests
 
 ## Documentation
 
-Full documentation available at [docs.zzz.indielab.link](https://docs.zzz.indielab.link) under the Mailer section.
+Full documentation available at [docs.pidgn.indielab.link](https://docs.pidgn.indielab.link) under the Mailer section.
 
 ## Ecosystem
 
 | Package | Description |
 |---------|-------------|
-| [zzz.zig](https://github.com/seemsindie/zzz.zig) | Core web framework |
-| [zzz_db](https://github.com/seemsindie/zzz_db) | Database ORM (SQLite + PostgreSQL) |
-| [zzz_jobs](https://github.com/seemsindie/zzz_jobs) | Background job processing |
-| [zzz_mailer](https://github.com/seemsindie/zzz_mailer) | Email sending |
-| [zzz_template](https://github.com/seemsindie/zzz_template) | Template engine |
-| [zzz_cli](https://github.com/seemsindie/zzz_cli) | CLI tooling |
+| [pidgn.zig](https://github.com/seemsindie/pidgn) | Core web framework |
+| [pidgn_db](https://github.com/seemsindie/pidgn_db) | Database ORM (SQLite + PostgreSQL) |
+| [pidgn_jobs](https://github.com/seemsindie/pidgn_jobs) | Background job processing |
+| [pidgn_mailer](https://github.com/seemsindie/pidgn_mailer) | Email sending |
+| [pidgn_template](https://github.com/seemsindie/pidgn_template) | Template engine |
+| [pidgn_cli](https://github.com/seemsindie/pidgn_cli) | CLI tooling |
 
 ## Requirements
 
