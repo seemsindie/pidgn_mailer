@@ -1,6 +1,6 @@
 .{
     .name = .pidgn_mailer,
-    .version = "0.3.1-beta.1",
+    .version = "0.3.0-beta.1",
     .fingerprint = 0x35aecbd0009bfeff,
     .minimum_zig_version = "0.16.0-dev.2905+5d71e3051",
     .dependencies = .{

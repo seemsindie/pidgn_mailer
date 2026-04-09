@@ -60,7 +60,7 @@ pub const serializer = @import("serializer.zig");
 // Template engine (re-exported from pidgn_template)
 pub const template = @import("pidgn_template");
 
-pub const version = "0.3.1-beta.1";
+pub const version = "0.1.0";
 
 test {
     std.testing.refAllDecls(@This());
