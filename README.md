@@ -151,7 +151,7 @@ zig build test   # Run tests
 
 ## Documentation
 
-Full documentation available at [docs.pidgn.indielab.link](https://docs.pidgn.indielab.link) under the Mailer section.
+Full documentation available at [docs.pidgn.seemsindie.com](https://docs.pidgn.seemsindie.com) under the Mailer section.
 
 ## Ecosystem
 
